@@ -1,24 +1,33 @@
 package com.wflin.aiinvestmentplatform.industry;
 
+import java.time.LocalDateTime;
+
 public class Industry {
 
     private Long id;
-    private String name;
-    private String category;
-    private Integer heatScore;
-    private Integer prosperityScore;
+    private String industryCode;
+    private String industryName;
+    private Integer level;
+    private Long parentId;
     private String description;
+    private String status;
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
 
     public Industry() {
     }
 
-    public Industry(Long id, String name, String category, Integer heatScore, Integer prosperityScore, String description) {
+    public Industry(Long id, String industryCode, String industryName, Integer level, Long parentId,
+            String description, String status, LocalDateTime createTime, LocalDateTime updateTime) {
         this.id = id;
-        this.name = name;
-        this.category = category;
-        this.heatScore = heatScore;
-        this.prosperityScore = prosperityScore;
+        this.industryCode = industryCode;
+        this.industryName = industryName;
+        this.level = level;
+        this.parentId = parentId;
         this.description = description;
+        this.status = status;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
     }
 
     public Long getId() {
@@ -29,36 +38,36 @@ public class Industry {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getIndustryCode() {
+        return industryCode;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setIndustryCode(String industryCode) {
+        this.industryCode = industryCode;
     }
 
-    public String getCategory() {
-        return category;
+    public String getIndustryName() {
+        return industryName;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setIndustryName(String industryName) {
+        this.industryName = industryName;
     }
 
-    public Integer getHeatScore() {
-        return heatScore;
+    public Integer getLevel() {
+        return level;
     }
 
-    public void setHeatScore(Integer heatScore) {
-        this.heatScore = heatScore;
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 
-    public Integer getProsperityScore() {
-        return prosperityScore;
+    public Long getParentId() {
+        return parentId;
     }
 
-    public void setProsperityScore(Integer prosperityScore) {
-        this.prosperityScore = prosperityScore;
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
     }
 
     public String getDescription() {
@@ -67,5 +76,29 @@ public class Industry {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public LocalDateTime getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(LocalDateTime createTime) {
+        this.createTime = createTime;
+    }
+
+    public LocalDateTime getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(LocalDateTime updateTime) {
+        this.updateTime = updateTime;
     }
 }

@@ -1,5 +1,21 @@
 # AI Agent Design
 
+## V1 Industry Agent Contract
+
+Input:
+- `industryId`
+
+Output:
+- `industry` - industry basic information.
+- `score` - five-dimension industry score and computed total score.
+- `stocks` - stock and industry relation list.
+- `conclusion` - deterministic analysis summary for the current seed data.
+
+Backend endpoint:
+- `GET /api/industry/{id}/analysis`
+
+The current backend implementation is seed-backed and uses mapper-style classes so the data access layer can later be replaced with MyBatis/MySQL without changing the API contract.
+
 ## Investment Director Agent
 
 负责统筹投资研究流程。

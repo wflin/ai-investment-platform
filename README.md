@@ -25,10 +25,49 @@ The service starts on `http://localhost:8080` by default.
 ### List Industries
 
 ```bash
-curl http://localhost:8080/api/industries
+curl http://localhost:8080/api/industry/list
 ```
 
-`GET /api/industries` returns seed industry data with fields such as `id`, `name`, `category`, `heatScore`, `prosperityScore`, and `description`.
+`GET /api/industry/list` returns V1 industry classification data with fields such as `id`, `industryCode`, `industryName`, `level`, `parentId`, `description`, `status`, `createTime`, and `updateTime`.
+
+Optional query parameters:
+
+- `level` - filter by industry hierarchy level.
+- `parentId` - filter child industries by parent industry ID.
+
+The legacy `GET /api/industries` endpoint remains available for existing clients.
+
+### Get Industry Detail
+
+```bash
+curl http://localhost:8080/api/industry/1
+```
+
+`GET /api/industry/{id}` returns a single industry record. Unknown industry IDs return `404 Not Found`.
+
+### List Stocks by Industry
+
+```bash
+curl http://localhost:8080/api/industry/1/stocks
+```
+
+`GET /api/industry/{id}/stocks` returns related stocks with `stockCode`, `stockName`, and `industryId`.
+
+### Get Industry Score
+
+```bash
+curl http://localhost:8080/api/industry/1/score
+```
+
+`GET /api/industry/{id}/score` returns five 20-point scoring dimensions: `prosperityScore`, `capitalScore`, `policyScore`, `valuationScore`, and `sentimentScore`, plus computed `totalScore`.
+
+### Get Industry Agent Analysis
+
+```bash
+curl http://localhost:8080/api/industry/1/analysis
+```
+
+`GET /api/industry/{id}/analysis` returns the structured Industry Agent output: industry basic information, score, related stocks, and an analysis conclusion.
 
 ### List Stocks
 
