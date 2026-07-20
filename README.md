@@ -52,3 +52,7 @@ AI Investment Platform is a scaffold for an AI-assisted investment research plat
 ## Current Status
 
 The repository contains documentation and empty module scaffolding only.
+
+## Auto Merge Test
+
+This change is created for GitHub auto-merge testing.
