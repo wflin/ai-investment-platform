@@ -1,6 +1,6 @@
 # AI Investment Platform
 
-AI Investment Platform is an AI-assisted investment research platform. The current repository includes the first backend REST API for industry analysis.
+AI Investment Platform is an AI-assisted investment research platform. The current repository includes backend REST APIs for industry analysis and issue detail lookup.
 
 ## Backend
 
@@ -29,6 +29,15 @@ curl http://localhost:8080/api/industries
 ```
 
 `GET /api/industries` returns seed industry data with fields such as `id`, `name`, `category`, `heatScore`, `prosperityScore`, and `description`.
+
+### Get Issue Detail
+
+```bash
+curl http://localhost:8080/api/issues/17
+```
+
+`GET /api/issues/{id}` returns seed issue detail data with fields such as `id`, `title`, `status`, `priority`, `summary`, and `description`. Unknown issue IDs return `404 Not Found`.
+
 AI Investment Platform is a scaffold for an AI-assisted investment research platform.
 
 ## Repository Layout
@@ -51,7 +60,7 @@ AI Investment Platform is a scaffold for an AI-assisted investment research plat
 
 ## Current Status
 
-The repository contains documentation and empty module scaffolding only.
+The repository contains documentation, module scaffolding, and initial Spring Boot backend REST APIs.
 
 ## Auto Merge Test
 
