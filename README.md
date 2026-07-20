@@ -69,6 +69,38 @@ curl http://localhost:8080/api/industry/1/analysis
 
 `GET /api/industry/{id}/analysis` returns the structured Industry Agent output: industry basic information, score, related stocks, and an analysis conclusion.
 
+### List Latest Policies
+
+```bash
+curl http://localhost:8080/api/policies/latest
+```
+
+`GET /api/policies/latest` returns seed policy data ordered by publish time, with fields such as `id`, `title`, `source`, `publishTime`, `content`, `policyType`, `importanceLevel`, `createTime`, and `updateTime`.
+
+### Get Policy Detail
+
+```bash
+curl http://localhost:8080/api/policies/1
+```
+
+`GET /api/policies/{id}` returns a single policy record. Unknown policy IDs return `404 Not Found`.
+
+### Get Policy Industries
+
+```bash
+curl http://localhost:8080/api/policies/1/industries
+```
+
+`GET /api/policies/{id}/industries` returns mapped industry impact data with `policyId`, `industryId`, `industryName`, `influenceLevel`, and `influenceDirection`.
+
+### Get Policy Agent Analysis
+
+```bash
+curl http://localhost:8080/api/policies/1/analysis
+```
+
+`GET /api/policies/{id}/analysis` returns deterministic Policy Agent output: policy detail, affected industries, summary, opportunity, risk, and recommendation.
+
 ### List Stocks
 
 ```bash
