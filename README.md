@@ -30,6 +30,30 @@ curl http://localhost:8080/api/industries
 
 `GET /api/industries` returns seed industry data with fields such as `id`, `name`, `category`, `heatScore`, `prosperityScore`, and `description`.
 
+### List Stocks
+
+```bash
+curl http://localhost:8080/api/stocks
+```
+
+`GET /api/stocks` returns seed stock basic information with fields such as `code`, `name`, `industry`, and `market`.
+
+### Filter Stocks by Industry
+
+```bash
+curl "http://localhost:8080/api/stocks?industry=Semiconductors"
+```
+
+`GET /api/stocks?industry={industry}` returns stocks for the requested industry. Unknown industries return an empty list.
+
+### Get Stock Detail
+
+```bash
+curl http://localhost:8080/api/stocks/300750
+```
+
+`GET /api/stocks/{code}` returns stock basic information by stock code. Unknown stock codes return `404 Not Found`.
+
 ### Get Issue Detail
 
 ```bash
