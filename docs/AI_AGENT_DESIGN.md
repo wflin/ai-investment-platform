@@ -16,6 +16,27 @@ Backend endpoint:
 
 The current backend implementation is seed-backed and uses mapper-style classes so the data access layer can later be replaced with MyBatis/MySQL without changing the API contract.
 
+## V1 Policy Agent Contract
+
+Input:
+- `policyId`
+
+Output:
+- `policy` - policy title, source, publish time, content, type, and importance.
+- `industries` - related industry impact list with influence level and direction.
+- `summary` - deterministic policy impact summary for the current seed data.
+- `opportunity` - positive industry catalyst summary.
+- `risk` - implementation and demand pull-through risk reminder.
+- `recommendation` - next research action for affected industries.
+
+Backend endpoint:
+- `GET /api/policies/{id}/analysis`
+
+Policy data endpoints:
+- `GET /api/policies/latest`
+- `GET /api/policies/{id}`
+- `GET /api/policies/{id}/industries`
+
 ## Investment Director Agent
 
 负责统筹投资研究流程。
